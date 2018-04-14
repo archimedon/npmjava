@@ -1,0 +1,1 @@
+web: b2intgr/bin/cloudfs.sh start && npm start
