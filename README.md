@@ -68,26 +68,30 @@ Alternatively, one can modify the config files:
 ## Deploy to Heroku
 
 Assumptions:
-1 directory initialized as git repo:
-    `git init`
 
-2. A Heroku app exists or was created:
-    `heroku create`
+  1. directory initialized as git repo:
+```bash
+    git init`
+```
+
+  2. A Heroku app exists or was created:
+```bash
+    heroku create
+```
 ----
 
 Assuming nodejs buildpack already added:
 
 - Add the Java buildpack:
-```
+```bash
     heroku buildpacks:add heroku/java
 ```
 
 The java buildpack should come after `heroku/node`
 
 - Confirm:
-
-```
-   $ heroku buildpacks
+```bash
+   heroku buildpacks
 ```
 Output:
 ```
@@ -97,18 +101,19 @@ Output:
 ```
 
 - Add graphenedb:
-
-    `heroku addons:create graphenedb:dev-free`
+```bash
+    heroku addons:create graphenedb:dev-free
+```
 
 - Finally:
-```
+```bash
     git push heroku master
 ```
 
 ## Development and Testing
 
 Set properties in the config.json file. `$VARIABLES` may be used directly in the config file. They will be interpolated from corresponding **environment** variables. That is, for BASH:
-```
+```bash
     export VARN=value
 ```
 
@@ -117,23 +122,11 @@ Set properties in the config.json file. `$VARIABLES` may be used directly in the
     "poolSize": 5,
     "maxPoolSize": $VARN,
     "neo4jConf": {
-        // Be sure to use the BOLT server's port
         "urlString": "$GRAPHENEDB_BOLT_URL",
         "username": "$GRAPHENEDB_BOLT_USER",
-    ...,
+        "..."
     },
-
 ```
+
 ... Same as setting the values in `.env`.
-
-
-
-
-
-
-
-
-
-
-
 
