@@ -81,6 +81,9 @@ Assumptions:
 ----
 
 Assuming nodejs buildpack already added:
+```bash
+    heroku buildpacks:add heroku/nodejs
+```
 
 - Add the Java buildpack:
 ```bash

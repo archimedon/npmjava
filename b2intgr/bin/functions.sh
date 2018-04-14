@@ -129,7 +129,7 @@ stop_zqueue () {
 function start_zqueue () {
 	JAR="$1";
 
-#	java $JAVA_OPTS -jar b2intgr/target/b2intgr-0.0.1.jar &
+#	java $JAVA_TOOL_OPTIONS -jar b2intgr/target/b2intgr-0.0.1.jar &
 
 	echo -n $! > $ZQUEUE_PIDFILE
  
@@ -143,7 +143,7 @@ function start_zqueue () {
 		# stop_zqueue
 	fi
  
-	java $JAVA_OPTS -jar $JAR & 
+	java $JAVA_TOOL_OPTIONS -jar $JAR & 
 
     let pid=$!
 
