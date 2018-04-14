@@ -113,12 +113,22 @@ Output:
     git push heroku master
 ```
 
+Confirm it's working:
+
+    https://rdnpmjava.herokuapp.com/
+
+The `/buckets` data is pulled via CloudFS
+
+    https://rdnpmjava.herokuapp.com/buckets
+
+
 ## Development and Testing
 
 Set properties in the config.json file. `$VARIABLES` may be used directly in the config file. They will be interpolated from corresponding **environment** variables. That is, for BASH:
 ```bash
     export VARN=value
 ```
+The config ..:
 
 ```json
 
@@ -132,4 +142,28 @@ Set properties in the config.json file. `$VARIABLES` may be used directly in the
 ```
 
 ... Same as setting the values in `.env`.
+
+### Dev cycle
+
+During Dev it might be easier to keep CloudFS running in the background.:
+```
+    b2intgr/bin/cloudfs.sh start
+
+## Stop:
+
+    b2intgr/bin/cloudfs.sh stop
+    
+## Test:
+
+    b2intgr/bin/cloudfs.sh test
+    
+## Clean build
+
+    b2intgr/bin/cloudfs.sh clean
+
+```
+
+Start expressJS as needed: `npm start`
+
+
 

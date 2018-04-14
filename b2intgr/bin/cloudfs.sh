@@ -35,10 +35,19 @@ elif [ "$CMD_SWITCH" == "start" ]; then
 		else
 			MARGS=" -DskipTests --file ${B2_HOME}"
 		fi
-		$MAVEN clean compile package${MARGS}
+
+		$MAVEN clean compile package${MARGS} 1>&2
 	fi
 
 	[ -f "$B2_TARGET" ] && start_zqueue "$B2_TARGET"
+
+elif [ "$CMD_SWITCH" == "clean" ]; then
+
+		MAVEN="`which mvn`"
+		$MAVEN clean 1>&2
+		
+		[ -f "$B2_HOME/dependency-reduced-pom.xml" ] && rm "$B2_HOME/dependency-reduced-pom.xml";
+		[ -d "$B2_HOME/run" ] && rm -rf "$B2_HOME/run";
 
 elif [ "$CMD_SWITCH" == "test" ]; then
 
