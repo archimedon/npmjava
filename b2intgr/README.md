@@ -1,4 +1,4 @@
-BackBlaze Integration Project
+BackBlaze Integration
 =============================
 
 **CloudFS** provides a Rest interface to BackBlaze storage. It allows for structuring directory trees along the lines of `author`, `owner` (aka: organization) and nested contexts.
