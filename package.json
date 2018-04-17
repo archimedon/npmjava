@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prestart": "[ ! -d node_modules ] && npm i",
+    "prestart": "[ ! -d node_modules ] && npm install",
     "start": "node ./bin/www"
   },
   "dependencies": {
