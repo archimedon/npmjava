@@ -58,9 +58,8 @@ Both **CloudFS** and **expressJS** use the `GRAPHENE` settings.
 
 Alternatively, one can modify the config files:
 
-   [Main config](b2intgr/src/main/resources/config.json) - for the main app
-    
-   and [Test config](b2intgr/src/test/resources/config.json) - for test configuration.
+- `src/main/resources/config.json` - ([Main config](src/main/resources/config.json))
+- `src/test/resources/config.json` - ([Test config](src/test/resources/config.json))
 
 (The **test** config contains instructions and comments)
 
