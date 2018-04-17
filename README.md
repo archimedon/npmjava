@@ -147,6 +147,8 @@ The config ..:
 
 During Dev it might be easier to keep CloudFS running in the background.:
 ```
+## Start:
+
     b2intgr/bin/cloudfs.sh start
 
 ## Stop:

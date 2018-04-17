@@ -6,7 +6,7 @@
 
     <groupId>com.rdnsn</groupId>
 	<artifactId>cloudfs</artifactId>
-    <version>0.0.8</version>
+    <version>0.9</version>
 	<packaging>pom</packaging>
 	<name>CloudFS</name>
 

@@ -129,12 +129,10 @@ stop_zqueue () {
 function start_zqueue () {
 	JAR="$1";
 
-#	java $JAVA_TOOL_OPTIONS -jar b2intgr/target/b2intgr-0.0.1.jar &
-
 	echo -n $! > $ZQUEUE_PIDFILE
- 
+
  	nc -z localhost $QUEUE_PORT >/dev/null 2>&1;
- 
+
 	if [ $? -eq 0 ]; then
 		echo "Already running on port: ${QUEUE_PORT}" >&2
 		return 0
@@ -142,8 +140,8 @@ function start_zqueue () {
 		# port $QUEUE_PORT is not available! >&2
 		# stop_zqueue
 	fi
- 
-	java $JAVA_TOOL_OPTIONS -jar $JAR & 
+
+	java $JAVA_TOOL_OPTIONS -jar $JAR &
 
     let pid=$!
 
@@ -164,9 +162,9 @@ test_zqueue () {
 	fi
 
 	MAVEN="`which mvn`"
-			
+
     $MAVEN clean test [ "$B2_HOME" == "." ] && '' || "--file $B2_HOME"
-    
+
 
     return 0;
 }
